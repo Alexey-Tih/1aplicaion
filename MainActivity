@@ -17,7 +17,7 @@ public class base_Activity extends AppCompatActivity {
     private EditText edName, edSecName, edEmail;
     private DatabaseReference mDataBase;
     private String USER_KEY = "Text";
-    private long time;
+  
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,8 @@ public class base_Activity extends AppCompatActivity {
         String name = edName.getText().toString();
         String sec_name = edSecName.getText().toString();
         String email = edEmail.getText().toString();
-        this.time = new Date().getTime();
-        User newUser = new User(id,name,sec_name,email,time);
+       
+        User newUser = new User(id,name,sec_name,email);
         if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(sec_name) && !TextUtils.isEmpty(email) )
         {
             mDataBase.push().setValue(newUser);
